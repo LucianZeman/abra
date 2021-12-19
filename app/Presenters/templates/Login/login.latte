@@ -1,0 +1,14 @@
+{block content}
+    <div class="main-content-login">
+        <div class="login-content">
+            <p>Test</p>
+            {* <form n:name=loginForm class=form>
+                <label n:name=username><input n:name=username placeholder="Uživatelské jméno" class="username"></label><br>
+                <label n:name=password><input n:name=password placeholder="Heslo" class="password"></label><br>
+                <input n:name=login class="button submit">
+            </form> *}
+        </div>
+    </div>
+
+    <div n:foreach="$flashes as $flash" n:class="flash, $flash->type" style="text-align: center; margin-top: 20px;">{$flash->message}</div>
+{/block}

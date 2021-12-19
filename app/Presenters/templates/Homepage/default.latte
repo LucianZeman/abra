@@ -1,0 +1,19 @@
+{block content}
+	<div class="main-content-homepage">
+		<div n:foreach="$flashes as $flash" n:class="flash, $flash->type" style="font-size: 20px; color: black; position: absolute; top: 15px; left: 50%; transform: translate(-50%); background: rgb(158, 32, 32); padding: 5px; border-radius: 15px;">{$flash->message}</div>
+		<div class="schuzky-row-homepage">
+			<div class="schuzky-text-content-row">
+				<span class="schuzky-text-row st1">Přehled schůzek: </span>
+			</div>
+			{foreach $schuzky as $post}
+				<a n:href="Schuzky:schuzka $post->id">
+					<div class="schuzka-homepage">
+						<h1>{$post->nazev|truncate:10}</h1>
+						<h2>{$post->datum|date:'d.m.Y'}</h2>
+						<p>{$post->popis|truncate:130}</p>
+					</div>
+				</a>
+			{/foreach}
+		</div>
+	</div>
+{/block}

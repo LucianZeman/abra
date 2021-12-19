@@ -1,0 +1,28 @@
+{block content}
+<div class="main-content-profil">
+    <div class="profile-info">
+        <div n:foreach="$flashes as $flash" n:class="flash, $flash->type" style="color: darkred; position: absolute; left: 50%; transform: translate(-50%);">{$flash->message}</div>
+        <div class="profile-header">
+            <div class="profil-avatar"></div>
+        </div>
+        <div class="profile-body">
+            <form n:name=editUser class=form>
+                <label n:name=name><input class="profile-name" placeholder="Jméno a příjmení" n:name=name></label><br>
+                <label n:name=username><input class="profile-username" n:name=username tabindex="-1" readonly></label>
+                    <hr class="hr1">
+                    <h2 class="profile-aboutme">O mně</h2>
+                <p class="profile-popis">
+                    <textarea  class="profile-textarea" n:name=popis name="popis" placeholder="Popisek o osobě (Není potřeba)"></textarea>
+                </p> 
+                <div class="profile-footer-inputs">
+                    <select class="profile-opravneni-edit" n:name=opravneni name="opravneni"></select>
+                    <select class="profile-druzina-edit" n:name=druzina name="druzina"></select>
+                </div>
+                <p class="profile-btn-edit profile-btn">
+                    <input n:name=send name="send" class="profile-btn-edit-text-edit-upravit">
+                    <a class="profile-btn-edit-text-edit-zrusit" n:href="Uzivatele:prehled">Zrušit</a>
+                </p>
+            </form>
+        </div>
+    </div>
+<div>

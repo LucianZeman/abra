@@ -1,0 +1,5 @@
+services:
+	security.passwords: Nette\Security\Passwords(::PASSWORD_BCRYPT, [cost: 12])
+	- App\Router\RouterFactory::createRouter
+	- MyAuthenticator
+	# - MyAuthorizator

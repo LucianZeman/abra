@@ -1,0 +1,35 @@
+{* {block content}
+    <div class="main-content">
+        <div class="content-info-create">
+            <h1 class="create-h1">Editovat schůzku</h1>
+            <hr class="create-hr">
+            <div class="createFlex">
+                <form n:name=editForm class=form>
+                    <label n:name=name><input n:name=name placeholder="Název schůzky" value="{$post->nazev}" class="name"></label><br>
+                    <label n:name=date><input n:name=date class="date"></label><br>
+                    <label n:name=content><textarea n:name=content name="content" placeholder="Co se bude dělat.." value="{$post->popis}"></textarea></label><br>
+                    <input n:name=send class="button submit">
+                    <a n:href="Schuzky:prehled" class="button cancel">Zrušit</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{/block} *}
+{block content}
+    {var $today = date("Y-m-d")}
+
+    <div class="main-content">
+        <div class="content-info">
+            <h2 class="create-h1-edit">Editovat schůzku</h2>
+            <form n:name=editForm class=form>
+                <div class="create-areaschuzka">
+                    <input n:name=send class="createBTN submit">
+                    <span class="createBTN deleteCr"><a class="href" type="no" n:href="Homepage:default">Zrušit</a></span>
+                </div>
+                <input n:name=name class="create-nazev-h1" placeholder="Název schůzky" value="{$post->nazev}"><br>
+                <input n:name=date class="create-datum"><br>
+                <textarea n:name=content class="create-textarea" placeholder="Obsah schůzky" value="{$post->popis}"></textarea>
+            </form>
+        </div>
+    </div>
+{/block}

@@ -1,0 +1,27 @@
+{block content}
+<div class="main-content-profil">
+    <div class="profile-info">
+        <h2 class="profile-edittitle">UPRAVIT PROFIL</h2>
+        <div class="profile-header">
+            <div class="profil-avatar"></div>
+        </div>
+        <div class="profile-body">
+            {* <form n:name=editProfileForm class=form>
+                <input n:name=avatar class="profile-avatar-upload">
+            </form> *}
+            <h1 class="profile-name">{$user->getIdentity()->name}</h1>
+            <h3 class="profile-username">@{$user->getIdentity()->username}</h3>
+            <hr class="hr1">
+            <h2 class="profile-aboutme">O mně</h2>
+                <form n:name=editProfileForm class=form>
+                    <div class="profile-popis">
+                        <textarea n:name=popis name="popis"></textarea>
+                    </div>
+                    <p class="profile-btn-edit">
+                        <input n:name=send class="profile-btn-edit-text-edit-upravit">
+                        <a class="profile-btn-edit-text-edit-zrusit" n:href="Profil:mujprofil">Zrušit</a>
+                    </p>
+                </form>
+        </div>
+    </div>
+<div>

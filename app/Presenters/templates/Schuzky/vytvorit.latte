@@ -1,0 +1,18 @@
+{block content}
+    {var $today = date("Y-m-d")}
+
+    <div class="main-content">
+        <div class="content-info">
+            <h2 class="create-h1-edit">Vytvořit schůzku</h2>
+            <form n:name=createForm class=form>
+                <div class="create-areaschuzka">
+                    <input n:name=send class="createBTN submit">
+                    <span class="createBTN deleteCr"><a class="href" type="no" n:href="Homepage:default">Zrušit</a></span>
+                </div>
+                <input n:name=name class="create-nazev-h1" placeholder="Název schůzky"><br>
+                <input n:name=date class="create-datum" value="{$today}"><br>
+                <textarea n:name=content class="create-textarea" placeholder="Obsah schůzky"></textarea>
+            </form>
+        </div>
+    </div>
+{/block}

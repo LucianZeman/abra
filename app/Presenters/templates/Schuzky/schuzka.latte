@@ -1,0 +1,51 @@
+{block content}
+    <div class="main-content">
+        <div class="content-info">
+            <div class="areaschuzka">
+                <span n:if="$user->isInRole('Admin')" class="schuzkaBTN lock">{if $post->lock == 0}<a class="href" n:href="Schuzky:lock $post->id, 1">Zamknout</a>{else}<a class="href" n:href="Schuzky:lock $post->id, 0">Odemknout</a>{/if}</span>
+                <span n:if="$user->isInRole('Admin') || $user->isInRole('Správce')" class="schuzkaBTN edit"><a class="href" n:href="Schuzky:edit $post->id">Upravit</a></span>
+                <span n:if="$user->isInRole('Admin') || $user->isInRole('Správce')" class="schuzkaBTN delete"><a class="href" n:href="Schuzky:delete $post->id">Smazat</a></span>
+            </div>
+            <h1>{$post->nazev}</h1>
+            <h2>{$post->datum|date:'d.m.Y'}</h2>
+            <p>{$post->popis}</p>
+            <span class="creator">Schůzku založil {$post->vytvoril}</span>
+        </div>
+        {*<div class="content-dochazka" n:snippet="dochazka">*}
+        <div class="content-dochazka">
+            <h1>DOCHÁZKA</h1>
+                <div n:foreach="$uzivatele as $uzivatel" class="uzivatel">
+                    {if $post->lock == 1 || $user->isInRole('Uživatel') || $user->isInRole('Rádce')}
+                        {var $jmeno = $uzivatel->username}
+                        
+                        {if $dochazka->$jmeno == 0}
+                            <span style="position: absolute; left: 30%; transform: translate(-50%);" class='status nepritomny'></span>
+                        {elseif $dochazka->$jmeno == 1}
+                            <span style="position: absolute; left: 30%; transform: translate(-50%);" class='status pritomny'></span>
+                        {else}
+                            <span style="position: absolute; left: 30%; transform: translate(-50%);" class='status none ajax'></span>
+                        {/if}
+
+                        <span style="position: absolute; left: 50%; transform: translate(-50%);"class="uzivatele-jmeno"><a n:href="Profil:profil $uzivatel->id">{$uzivatel->name}</a></span>
+
+                    {else}
+                        {var $jmeno = $uzivatel->username}
+
+                        {if $dochazka->$jmeno == 0}
+                            <span class='status nepritomny'></span>
+                        {elseif $dochazka->$jmeno == 1}
+                            <span class='status pritomny'></span>
+                        {else}
+                            <span class='status none ajax'></span>
+                        {/if}
+
+                        <span class="uzivatele-jmeno"><a n:href="Profil:profil $uzivatel->id">{$uzivatel->name}</a></span>
+                        <span n:if="$user->isInRole('Admin') || $user->isInRole('Správce')"><a class="uzivatele-pritomny" n:href="Schuzky:schuzka $post->id, $uzivatel->username, 1" class="link green">Přítomný</a></span>                
+                        <span n:if="$user->isInRole('Admin') || $user->isInRole('Správce')"><a class="uzivatele-nepritomny" n:href="Schuzky:schuzka $post->id, $uzivatel->username, 0">Nepřítomný</a></span>
+                
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+{/block}

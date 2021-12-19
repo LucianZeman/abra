@@ -1,0 +1,19 @@
+{* {block content}
+	<div class="main-content">
+		<div class="schuzky">
+			<label class="schuzky-title">&nbspPřehled o všech schůzkách:</label>
+			<div class="schuzky-row-content">
+				{foreach $schuzky as $post}
+				<a href="{link Schuzky:schuzka $post->id}">
+					<div class="schuzka">
+						<h1>{$post->nazev|truncate:15}</h1>
+						<h2>{$post->datum|date:'d.m.Y'}</h2>
+						<p>{$post->popis|truncate:130}</p>
+						<p class="author">Vytvořil {$post->vytvoril}</p>
+					</div>
+				</a>
+				{/foreach}	
+			</div>
+		</div>
+	</div>
+{/block} *}

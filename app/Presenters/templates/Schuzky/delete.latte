@@ -1,0 +1,13 @@
+{block content}
+    <div class="main-content">
+        <div class="content-info">
+            <div class="areaschuzka">
+                <span class="schuzkaBTN delete"><a class="href" n:href="Schuzky:delete $post->id, 1">Potvrdit smazání</a></span>
+            </div>
+            <h1>{$post->nazev}</h1>
+            <h2>{$post->datum|date:'d.m.Y'}</h2>
+            <p>{$post->popis}</p>
+            <span class="creator">Schůzku založil {$post->vytvoril}</span>
+        </div>
+    </div>
+{/block content}

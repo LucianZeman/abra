@@ -1,0 +1,24 @@
+{block content}
+<div class="main-content-uzivatele">
+    <div class="uzivatele-dashboard">
+        <div class="uzivatele-all-users">
+            <div n:foreach="$flashes as $flash" n:class="flash, $flash->type" style="color: darkred; position: absolute; left: 50%; transform: translate(-50%);">{$flash->message}</div>
+            <div class="uzivatele-header">
+                <h1 class="uzivatele-title">Přehled uživatelů</h1>
+                <h4 class="uzivatele-new-user"><a n:href="Uzivatele:novy">Přidat nového uživatele</a></h4>
+            </div>
+            <div class="uzivatele-body">
+                <div class="uzivatele-users">
+                    <div class="uzivatele-users-column">
+                        <div n:foreach="$uzivatele as $uzivatel" class="uzivatel">
+                            <span class="uzivatele-id">ID: {$uzivatel->id}</span>
+                            <span style="position: absolute; left: 80px;" class="uzivatele-jmeno"><a n:href="Profil:profil $uzivatel->id">{$uzivatel->name}</a></span>
+                            <span><a class="uzivatele-upravit" n:href="Uzivatele:edit $uzivatel->id">Upravit</a></span>
+                            <span><a class="uzivatele-odstanit" n:href="Uzivatele:delete $uzivatel->id">Odstranit</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

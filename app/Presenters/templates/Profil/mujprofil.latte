@@ -1,0 +1,19 @@
+{block content}
+<div class="main-content-profil">
+    <div class="profile-info">
+        <div class="profile-header">
+            <div class="profil-avatar"></div>
+        </div>
+        <div class="profile-body">
+            <h1 class="profile-name">{$user->getIdentity()->name}</h1>
+            <h3 class="profile-username">@{$user->getIdentity()->username}</h3>
+            <hr class="hr1">
+            <h2 class="profile-aboutme">O mně</h2>
+            <p class="profile-popis">
+            {if $uzivatele->popis}{$uzivatele->popis}{else}Bohužel zatím o mně nic nevíte..{/if}
+            </p> 
+            <p class="profile-btn-edit"><a class="profile-btn-edit-text" n:href="Profil:editprofil">Upravit informace</a></p>
+            <p class="profile-druzina"><span id="bold">Družina:</span> {$user->getIdentity()->druzina}</p>
+        </div>
+    </div>
+<div>

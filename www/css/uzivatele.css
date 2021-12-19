@@ -1,0 +1,235 @@
+.main-content-uzivatele {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uzivatele-dashboard {
+    position: relative;
+    background-color: #90a1b8;
+    width: 500px;
+    height: 700px;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.uzivatele-all-users {
+    position: relative;
+    width: 500px;
+    height: 700px;
+    border-radius: 25px;
+}
+
+.uzivatele-header {
+    width: 500px;
+    height: 100px;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.uzivatele-title {
+    text-align: center;
+    position: relative;
+    top: 5px;
+}
+
+.uzivatele-new-user {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    text-transform: uppercase;
+}
+
+.uzivatele-new-user a {
+    text-decoration: none;
+    color: black;
+    background: rgb(18, 131, 43);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.uzivatele-new-user a:hover {
+    color: #9cacbb;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.uzivatele-body {
+    bottom: 0;
+    width: 500px;
+    height: 600px;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.uzivatele-users {
+    position: relative;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 480px;
+    height: 550px;
+}
+
+.uzivatele-users-column {
+    width: 480px;
+    height: 550px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+/* .left {
+    float: left;
+}
+
+.right {
+    float: right;
+} */
+
+.uzivatele-cara {
+    position: absolute;
+    height: 550px;
+    width: 2px;
+    border: none;
+    background-color: black;
+    left: 50%;
+}
+
+.uzivatel{
+    position: relative;
+    top: 5px;
+    height: 25px;
+}
+
+.uzivatele-id {
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.uzivatele-jmeno a {
+    color: blue;
+    text-decoration: none;
+}
+
+.uzivatele-jmeno a:hover {
+    color: rgb(97, 97, 252);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.uzivatele-upravit {
+    position: absolute;
+    text-decoration: none;
+    right: 120px;
+    color: rgb(18, 131, 43);
+}
+
+.uzivatele-odstanit {
+    position: absolute;
+    text-decoration: none;
+    right: 20px;
+    color: rgb(131, 18, 18);
+}
+
+.uzivatele-upravit:hover {
+    color: rgb(38, 161, 65);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.uzivatele-odstanit:hover {
+    color: rgb(180, 40, 40);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.uzivatele-users-column::-webkit-scrollbar {
+    width: 0.7em;
+}
+ 
+.uzivatele-users-column::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+ 
+.uzivatele-users-column::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.profile-name, .profile-username{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.profile-name{
+    width: 250px;
+    height: 35px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.profile-username {
+    position: relative;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.profile-textarea {
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.profile-footer-inputs {
+    position: relative;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    height: 36px;
+}
+
+.profile-opravneni-edit {
+    position: relative;
+    top: -30px;
+    left: 50%;
+    height: 26px;
+}
+
+.profile-druzina-edit {
+    position: relative;
+    top: -30px;
+    left: 35px;
+    height: 26px;
+}
+
+.profile-password, .profile-opravneni, .profile-druzina {
+    position: relative;
+    top: -85px;
+    left: 35px;
+    height: 26px;
+}
+
+.profile-btn {
+    position: relative;
+    top: 25px;
+}
+
+.profile-btn-edit-edit {
+    text-decoration: none;
+    color: black;
+    background: rgb(131, 18, 18);
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    top: 15px;
+}
+
+.profile-druzina-editt {
+    margin-top: 50px;
+    text-align: center;
+}
